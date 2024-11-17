@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let size: number = 40;
-	export let color: string = "#000000";
+	export let color_mode: string = "black";
+	let color = color_mode === "black" ? "white" : "black";
 </script>
 
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->

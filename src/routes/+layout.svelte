@@ -6,7 +6,7 @@
 	let { children } = $props();
 
 	let search = $state(false);
-	let color_mode = "black";
+	let color_mode = "white";
 
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === "Escape" || event.key === "Enter") {
@@ -37,7 +37,7 @@
 <!-- CONTAINER -->
 	<div class="max-w-[1140px] mx-auto">
 		{#if search}
-			<Searchbar />
+			<Searchbar color_mode={color_mode}/>
 		{:else}
 			<Navbar color_mode={color_mode} />
 		{/if}

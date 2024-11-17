@@ -1,6 +1,7 @@
 <script lang="ts">
     export let size: number = 40;
-    export let color: string = "#000000";
+    export let color_mode: string = "black";
+    let color = color_mode === "black" ? "white" : "black";
 </script>
 
 <svg width="{size}px" height="{size}px" class="cursor-pointer" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
