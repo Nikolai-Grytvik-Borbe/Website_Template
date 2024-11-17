@@ -1,8 +1,10 @@
 <script lang="ts">
+	import NGB from './NGB.svelte';
     import Hamburger from './Hamburger.svelte';
     import Cross from './Cross.svelte';
+    export let color_mode = "black";
 
-    let color = "white";
+    let color = color_mode === "black" ? "white" : "black";
     let size = 24;
 
     let toggle_hamburger = false;
@@ -11,9 +13,9 @@
 
 <div class="block md:hidden">
   <!-- Mobile Navbar -->
-    <div class="fixed w-full ">
-        <div class="flex justify-between m-4 h-12 px-4 items-center rounded-2xl border border-gray-700">
-            <div><img src="" alt="">Logo</div>
+    <div class="fixed w-full">
+        <div class="flex justify-between h-12 m-4 px-4 items-center rounded-2xl border border-gray-700">
+            <div><NGB /></div>
             <button on:click={() => toggle_hamburger = !toggle_hamburger}>
                 <Hamburger size={size} color={color}/>
             </button>
@@ -37,7 +39,13 @@
 
 <div class="hidden md:block">
   <!-- Desktop Navbar -->
-   <div class="fixed w-">
-
-   </div>
+    <div class="fixed max-w-[1140px] w-full">
+        <div class="flex justify-between h-12 m-4 px-4 items-center rounded-2xl border border-gray-700">
+            <NGB />
+            <div class="flex items-center gap-5">
+                <div class=""><a href="#home">Home</a></div>
+                <div class=""><a href="#contact">Contact</a></div>
+            </div>
+        </div>
+    </div>
 </div>
